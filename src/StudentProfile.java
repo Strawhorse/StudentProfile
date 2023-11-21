@@ -1,6 +1,7 @@
 import Connectivity.DB;
 
 import java.sql.Connection;
+import java.util.Scanner;
 
 public class StudentProfile {
 
@@ -35,6 +36,12 @@ public class StudentProfile {
         this.address = address;
     }
 
+
+//    default constructor
+    public StudentProfile(){
+        System.out.println("Created...");
+    }
+
     public StudentProfile(int id, String name, String domain, String address) {
         this.id = id;
         this.name = name;
@@ -48,9 +55,23 @@ public class StudentProfile {
         this.address = address;
     }
 
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id->" + id +
+                ", name->'" + name + '\'' +
+                ", domain->'" + domain + '\'' +
+                ", address->'" + address + '\'' +
+                '}';
+    }
+
     public static void main(String[] args) {
 //
-        DB db = new DB();
+//        DB db = new DB();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Student Profile Portal");
 
     }
 }
