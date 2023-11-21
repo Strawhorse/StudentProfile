@@ -42,6 +42,12 @@ public class StudentProfile {
         this.address = address;
     }
 
+    public StudentProfile(String name, String domain, String address) {
+        this.name = name;
+        this.domain = domain;
+        this.address = address;
+    }
+
     public static void main(String[] args) {
 //
         DB db = new DB();
