@@ -11,6 +11,8 @@ public class StudentProfile {
     private String domain;
     private String address;
 
+
+//    methods, getters, setters
     public int getId(){
         return id;
     }
@@ -49,6 +51,8 @@ public class StudentProfile {
         this.address = address;
     }
 
+
+//    for creating new profiles
     public StudentProfile(String name, String domain, String address) {
         this.name = name;
         this.domain = domain;
@@ -87,7 +91,17 @@ public class StudentProfile {
             int i = scanner.nextInt();
             switch (i) {
                 case 1:
-                    System.out.println("Adding Profile");
+                    System.out.println("Add Profile\n");
+                    System.out.println("Enter Name:");
+                    String name = scanner.nextLine();
+                    System.out.println("Enter Domain:");
+                    String domain = scanner.nextLine();
+                    System.out.println("Enter Address:");
+                    String address = scanner.nextLine();
+
+//                    create database object
+                    StudentProfile sp = new StudentProfile(name, domain, address);
+
                     break;
                 case 2:
                     System.out.println("Display Profile");
