@@ -68,10 +68,21 @@ public class StudentProfile {
 
     public static void main(String[] args) {
 //
-//        DB db = new DB();
+//      // create scanner class to take in command line input
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Student Profile Portal");
+
+        while(true) {
+            System.out.println(
+                "\nPress 1 to Add profile"+
+                "\nPress 2 to Display profile"+
+                "\nPress 3 to Display profile with ID"+
+                "\nPress 4 to Delete profile"+
+                "\nPress 5 to Update profile\n"+
+                "\nPress 6 to Exit\n"
+            );
+        }
 
     }
 }
