@@ -80,7 +80,8 @@ public class StudentProfile {
                 "\nPress 3 to Display profile with ID"+
                 "\nPress 4 to Delete profile"+
                 "\nPress 5 to Update profile"+
-                "\nPress 6 to Exit"
+                "\nPress 6 to Exit"+
+                "\nEnter choice: "
             );
 
             int i = scanner.nextInt();
@@ -102,8 +103,11 @@ public class StudentProfile {
                     break;
                 case 6:
                     System.out.println("Exit ...");
+                    System.exit(0);
                     break;
-
+                default:
+                    System.out.println("Invalid input. Try again.");
+                    break;
             }
         }
 
