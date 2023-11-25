@@ -79,10 +79,35 @@ public class StudentProfile {
                 "\nPress 2 to Display profile"+
                 "\nPress 3 to Display profile with ID"+
                 "\nPress 4 to Delete profile"+
-                "\nPress 5 to Update profile\n"+
-                "\nPress 6 to Exit\n"
+                "\nPress 5 to Update profile"+
+                "\nPress 6 to Exit"
             );
+
+            int i = scanner.nextInt();
+            switch (i) {
+                case 1:
+                    System.out.println("Adding Profile");
+                    break;
+                case 2:
+                    System.out.println("Display Profile");
+                    break;
+                case 3:
+                    System.out.println("Display Profile incl. ID");
+                    break;
+                case 4:
+                    System.out.println("Delete Profile");
+                    break;
+                case 5:
+                    System.out.println("Updating Profile");
+                    break;
+                case 6:
+                    System.out.println("Exit ...");
+                    break;
+
+            }
         }
+
+
 
     }
 }
