@@ -74,7 +74,7 @@ public class StudentProfile {
 //
 //      // create scanner class to take in command line input
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Student Profile Portal");
 
         while(true) {
@@ -88,19 +88,20 @@ public class StudentProfile {
                 "\nEnter choice: "
             );
 
-            int i = scanner.nextInt();
+            int i = sc.nextInt();
             switch (i) {
                 case 1:
                     System.out.println("Add Profile\n");
                     System.out.println("Enter Name:");
-                    String name = scanner.nextLine();
+                    String name = sc.nextLine();
                     System.out.println("Enter Domain:");
-                    String domain = scanner.nextLine();
+                    String domain = sc.nextLine();
                     System.out.println("Enter Address:");
-                    String address = scanner.nextLine();
+                    String address = sc.nextLine();
 
 //                    create database object
                     StudentProfile sp = new StudentProfile(name, domain, address);
+                    System.out.println(sp.toString());
 
                     break;
                 case 2:
