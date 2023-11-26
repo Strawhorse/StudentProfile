@@ -38,6 +38,13 @@ public class AddAction {
             String query = "Select * from profile";
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
+
+//            loop through entries
+            while(rs.next()) {
+                System.out.println("\nID: " + rs.getInt(1) + "\nName: " + rs.getString(2) + "\nDomain: " + rs.getString(3) + "\nAddress: " + rs.getString(4));
+            }
+            System.out.println("\nEnd of entries!");
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
