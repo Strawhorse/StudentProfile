@@ -8,7 +8,7 @@ public class DB {
     public static Connection getCon() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc://mysql://localhost/student", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "root");
             System.out.println("Connection successful");
             return con;
 

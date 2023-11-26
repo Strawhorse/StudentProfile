@@ -93,6 +93,7 @@ public class StudentProfile {
                 case 1:
                     System.out.println("Add Profile\n");
                     System.out.println("Enter Name:");
+                    sc.nextLine();
                     String name = sc.nextLine();
                     System.out.println("Enter Domain:");
                     String domain = sc.nextLine();
@@ -102,6 +103,16 @@ public class StudentProfile {
 //                    create database object
                     StudentProfile sp = new StudentProfile(name, domain, address);
                     System.out.println(sp.toString());
+                    System.out.println("Adding profile now ...");
+
+                    AddAction aa = new AddAction();
+                    boolean validEntry = aa.add(sp);
+
+                    if (validEntry == true) {
+                        System.out.println("Profile added successfully.");
+                    } else {
+                        System.out.println("Problem occurred.");
+                    }
 
                     break;
                 case 2:
