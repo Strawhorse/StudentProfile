@@ -77,6 +77,9 @@ public class StudentProfile {
         Scanner sc = new Scanner(System.in);
         System.out.println("Student Profile Portal");
 
+//        create instance of Addaction class here so it doesn't have to be reinstantiated each time
+        AddAction aa = new AddAction();
+
         while(true) {
             System.out.println(
                 "\nPress 1 to Add profile"+
@@ -102,10 +105,8 @@ public class StudentProfile {
 
 //                    create database object
                     StudentProfile sp = new StudentProfile(name, domain, address);
-                    System.out.println(sp.toString());
                     System.out.println("Adding profile now ...");
 
-                    AddAction aa = new AddAction();
                     boolean validEntry = aa.add(sp);
 
                     if (validEntry == true) {
@@ -114,9 +115,18 @@ public class StudentProfile {
                         System.out.println("Problem occurred.");
                     }
 
+//                    User should get two messages during this operation
+//                    Connection successful, then Profile added successfully
+//                    Can be accessed from mysql command line with:
+//                    use student;
+//                    select * from profile;
+//                    can also use check table profile to ensure table/database is operating properly
+
                     break;
                 case 2:
                     System.out.println("Display Profile");
+                    aa.display();
+
                     break;
                 case 3:
                     System.out.println("Display Profile incl. ID");

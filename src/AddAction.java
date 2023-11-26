@@ -1,14 +1,11 @@
 import Connectivity.DB;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 public class AddAction {
 
     public boolean add(StudentProfile sp) {
-
         boolean check = false;
-
         try{
             Connection con = DB.getCon();
 
@@ -32,5 +29,18 @@ public class AddAction {
         }
 
         return check;
+    }
+
+    public void display() {
+
+        try{
+            Connection con = DB.getCon();
+            String query = "Select * from profile";
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
