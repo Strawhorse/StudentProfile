@@ -76,6 +76,56 @@ public class AddAction {
     }
 
     public boolean deleteEntry(int toDelete) {
-        return false;
+        boolean check = false;
+        try{
+            Connection con = DB.getCon();
+            String query = "delete from profile where id= "+toDelete;
+
+//            Run command to delete entry
+            PreparedStatement p = con.prepareStatement(query);
+            p.executeUpdate();
+
+            check = true;
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        return check;
+    }
+
+    public boolean updateEntry(String newName, String newDomain, String newAddress, int id) {
+//        make use of MySQL update command for final crud operation
+
+        boolean check = false;
+        try{
+            Connection con = DB.getCon();
+            String query = new StringBuilder().append("UPDATE profile set name=\'").append(newName).append("\', domain=\'").append(newDomain).append("\', address=\'").append(newAddress).append("\' where id=").append(id).toString();
+
+//            Run command to delete entry
+            PreparedStatement p = con.prepareStatement(query);
+            p.execute();
+            System.out.println("Successfully updated");
+
+            String checkQuery = "Select * from profile where id= "+id;
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(checkQuery);
+
+            while(rs.next()) {
+                System.out.println("\nID: " + rs.getInt(1) + "\nName: " + rs.getString(2) + "\nDomain: " + rs.getString(3) + "\nAddress: " + rs.getString(4));
+            }
+
+            check = true;
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        return check;
+
+
+
     }
 }

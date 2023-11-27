@@ -148,14 +148,35 @@ public class StudentProfile {
                     int toDelete = sc.nextInt();
 
                     boolean validDeleteID = aa.deleteEntry(toDelete);
-                    if(!validDeleteID){
+                    if(validDeleteID){
+                        System.out.println(new StringBuilder().append("ID ").append(toDelete).append(" deleted successfully!").toString());
+                    } else {
                         System.out.println(new StringBuilder().append("Sorry, ID ").append(toDelete).append(" not found!").toString());
                     }
-                    System.out.println("Entry deleted successfully.");
 
                     break;
                 case 5:
                     System.out.println("Updating Profile");
+                    System.out.println("\nEnter the ID you wish to update: ");
+                    int toUpdate = sc.nextInt();
+
+                    System.out.println("Enter New Name:");
+                    sc.nextLine();
+                    String newName = sc.nextLine();
+                    System.out.println("Enter New Domain:");
+                    String newDomain = sc.nextLine();
+                    System.out.println("Enter Address:");
+                    String newAddress = sc.nextLine();
+
+
+                    boolean validUpdateID = aa.updateEntry(newName, newDomain, newAddress, toUpdate);
+
+                    if(validUpdateID){
+                        System.out.println(new StringBuilder().append("ID ").append(toUpdate).append(" updated successfully!").toString());
+                    } else {
+                        System.out.println(new StringBuilder().append("Sorry, ID ").append(toUpdate).append(" not found!").toString());
+                    }
+
                     break;
                 case 6:
                     System.out.println("Exit ...");
