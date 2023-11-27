@@ -138,10 +138,21 @@ public class StudentProfile {
                     if(!validID){
                         System.out.println(new StringBuilder().append("Sorry, ID ").append(choice).append(" not found!").toString());
                     }
+                    System.out.println("End of entry.");
 
                     break;
+
                 case 4:
                     System.out.println("Delete Profile");
+                    System.out.println("\nEnter the ID you wish to delete from database: ");
+                    int toDelete = sc.nextInt();
+
+                    boolean validDeleteID = aa.deleteEntry(toDelete);
+                    if(!validDeleteID){
+                        System.out.println(new StringBuilder().append("Sorry, ID ").append(toDelete).append(" not found!").toString());
+                    }
+                    System.out.println("Entry deleted successfully.");
+
                     break;
                 case 5:
                     System.out.println("Updating Profile");

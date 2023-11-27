@@ -52,8 +52,30 @@ public class AddAction {
     }
 
     public boolean displaybyID(int id) {
-        Connection con = DB.getCon();
+//        reuse code from the entry method
 
-        return true;
+        boolean check = false;
+        try{
+            Connection con = DB.getCon();
+            String query = "Select * from profile where id= "+id;
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+
+            while(rs.next()) {
+                System.out.println("\nID: " + rs.getInt(1) + "\nName: " + rs.getString(2) + "\nDomain: " + rs.getString(3) + "\nAddress: " + rs.getString(4));
+            }
+
+            check = true;
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        return check;
+    }
+
+    public boolean deleteEntry(int toDelete) {
+        return false;
     }
 }
