@@ -8,7 +8,10 @@ public class DB {
     public static Connection getCon() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "root");
+
+//            for connection, user and password required for your own database
+
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student", "****", "****");
 //            System.out.println("Connection successful");
             return con;
 
