@@ -50,4 +50,10 @@ public class AddAction {
         }
 
     }
+
+    public boolean displaybyID(int id) {
+        Connection con = DB.getCon();
+
+        return true;
+    }
 }

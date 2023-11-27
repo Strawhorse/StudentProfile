@@ -126,10 +126,19 @@ public class StudentProfile {
                 case 2:
                     System.out.println("Display Profile");
                     aa.display();
+//                    outputs all entries in database using ResultSet
 
                     break;
                 case 3:
                     System.out.println("Display Profile incl. ID");
+                    System.out.println("\nEnter the ID you wish to output: ");
+                    int choice = sc.nextInt();
+                    System.out.println(new StringBuilder().append("You chose ID ").append(choice).toString());
+                    boolean validID = aa.displaybyID(choice);
+                    if(!validID){
+                        System.out.println(new StringBuilder().append("Sorry, ID ").append(choice).append(" not found!").toString());
+                    }
+
                     break;
                 case 4:
                     System.out.println("Delete Profile");
