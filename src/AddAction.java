@@ -108,6 +108,8 @@ public class AddAction {
             p.execute();
             System.out.println("Successfully updated");
 
+            System.out.println("Updated profile:\n");
+
             String checkQuery = "Select * from profile where id= "+id;
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(checkQuery);

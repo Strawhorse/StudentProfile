@@ -11,7 +11,7 @@ public class DB {
 
 //            for connection, user and password required for your own database
 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student", "****", "****");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "root");
 //            System.out.println("Connection successful");
             return con;
 
