@@ -117,17 +117,12 @@ public class AddAction {
             while(rs.next()) {
                 System.out.println("\nID: " + rs.getInt(1) + "\nName: " + rs.getString(2) + "\nDomain: " + rs.getString(3) + "\nAddress: " + rs.getString(4));
             }
-
             check = true;
-
         }
         catch (Exception e){
             System.out.println(e);
         }
 
         return check;
-
-
-
     }
 }
